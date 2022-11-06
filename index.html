@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
-<!-- 1.6.2014 vs 1.0 HTML-->
-<!-- 22.1.2019 vs 2.0 PHP -->
-<!-- 4.7.2022 vs 3.0 github -->
+<!-- 1.6.2014 vs 1.0 HTML WZ-->
+<!-- 22.1.2019 vs 2.0 PHP WZ-->
+<!-- 4.7.2022 vs 3.0 JS github -->
 
 <head>
 	<meta http-equiv="content-type" content="text/html" charset="UTF-8">
@@ -10,9 +10,9 @@
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta name="robots" content="noindex,follow">
 	<meta name="author" content="Martin Hošek">
-	<meta name="generator" content="notepad">
-	<meta name="description" content="Prezentacní stránky Bytového družstva">
-	<link rel="shortcut icon" href="http://nv1a2.wz.cz/favikon.ico">
+	<meta name="generator" content="Visual Studio Code">
+	<meta name="description" content="Prezentační stránky Bytového družstva">
+	<link rel="shortcut icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 -6 18 1'><text>🏠</text></svg>" type="image/svg+xml">
 	<title>NV 1 a 2, BV</title>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.3/particles.min.js"></script>
@@ -23,26 +23,36 @@
 			background: canvas;
 			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill='%239C92AC' fill-opacity='0.25' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"), linear-gradient(to right top, #909b5b, #798510, #003322, #1a8a20, #085e0f);
 		}
+
 		canvas {
 			position: fixed;
-           		width: 2000px;
-           		height: 1000px;
+			width: 2000px;
+			height: 1000px;
 		}
+
 		table {
 			position: relative;
 			padding-top: 20px;
 			border: 0px;
 			z-index: 1;
 		}
+
 		th {
 			background: radial-gradient(rgba(74, 255, 2, 0.3), rgba(255, 255, 255, 0));
 			width: 650px;
 		}
+
 		#i {
 			width: 180px;
 			height: 180px;
 			border-radius: 5px;
 		}
+
+		im img {
+			width: 630px;
+			height: 891px;
+		}
+
 		a {
 			color: #e9fa93;
 		}
@@ -57,6 +67,10 @@
 			connectParticles: true,
 			maxParticles: 150
 		});
+		for (let s = 1; s < 9; s++) {
+			document.querySelectorAll("#s")[0].insertAdjacentHTML("beforeend", `<a href="#${s}">${s}</a> `);
+			document.querySelectorAll("im")[0].insertAdjacentHTML("beforeend", `<br><img src="strana_${s}.jpg" id="${s}">`)
+		};
 	};
 	let kyvy = (x) => {
 		rand = Math.floor(Math.random() * 20) - 10;
@@ -65,7 +79,9 @@
 		x.style.transform = "rotateZ(" + rand + "deg)";
 		x.style.transition = "0.8s ease";
 	};
+
 </script>
+
 <body oncontextmenu="return false" onmousedown="return false" onselectstart="return false" ondragstart="return false">
 	<canvas></canvas>
 	<table cellspacing="0" cellpadding="2" align="center">
@@ -104,8 +120,8 @@
 							2. místopředseda: Renata Hošková
 						</p>
 						<p>Datová schránka: ztztz2e<br>
-						<p>Email: bd.nv1a2@gmail.com<br>	
-						<br>
+						<p>Email: bd.nv1a2@gmail.com<br>
+							<br>
 						</p>
 						<p>webové stránky: nv1a2.wz.cz - nv1a2.github.io
 						</p>
@@ -131,18 +147,9 @@
 			<tr>
 				<td height="180"></td>
 				<td align="center"><br>
-					<font size="4" color="#1ab534"> Stanovy strana : </font>
-					<a href="#1">1</a> <a href="#2">2</a> <a href="#3">3</a> <a href="#4">4</a> <a href="#5">5</a> <a
-						href="#6">6</a> <a href="#7">7</a> <a href="#8">8</a> <br>
-					<br><img src="pozvanka.jpg" width="630" height="891">
-					<br><img src="strana_1.jpg" id="1" width="630" height="891">
-					<br><img src="strana_2.jpg" id="2" width="630" height="891">
-					<br><img src="strana_3.jpg" id="3" width="630" height="891">
-					<br><img src="strana_4.jpg" id="4" width="630" height="891">
-					<br><img src="strana_5.jpg" id="5" width="630" height="891">
-					<br><img src="strana_6.jpg" id="6" width="630" height="891">
-					<br><img src="strana_7.jpg" id="7" width="630" height="891">
-					<br><img src="strana_8.jpg" id="8" width="630" height="891">
+					<font id="s" size="4" color="#1ab534"> Stanovy strana : </font>
+					<im>
+					</im>
 				</td>
 				<td height="180"></td>
 			</tr>
@@ -152,4 +159,5 @@
 		</tbody>
 	</table>
 </body>
+
 </html>
