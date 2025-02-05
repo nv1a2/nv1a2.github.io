@@ -69,6 +69,7 @@
 			document.querySelectorAll("#s")[0].insertAdjacentHTML("beforeend", `<a href="#${s}">${s}</a> `);
 			document.querySelectorAll("im")[0].insertAdjacentHTML("beforeend", `<br><img src="strana_${s}.png" id="${s}">`)
 		};
+	if (new Date("6/01/2025") > new Date()) document.getElementById("pozv").innerHTML = "<img src='poz.jpg' width='630px' height='891px'>";
 	};
 	let kyvy = (x) => {
 		rand = Math.floor(Math.random() * 20) - 10;
@@ -139,7 +140,7 @@
 			</tr>
 			<tr>
 				<td></td>
-				<td align="center"><!--<img src="poz.jpg" width="630px" height="891px">--></td>
+				<td id="pozv" align="center"></td>
 				<td></td>
 			</tr>
 			<tr>
