@@ -1,25 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="cs">
 <!-- 1.6.2014 vs 1.0 HTML WZ-->
 <!-- 22.1.2019 vs 2.0 PHP WZ-->
 <!-- 4.7.2022 vs 3.0 JS github -->
-<!-- 8.3.2026 vs 3.1 new bg -->	
-
+<!-- 8.3.2026 vs 3.1 new bg -->		
 <head>
-	<meta http-equiv="content-type" content="text/html" charset="UTF-8">
-	<meta http-equiv="Content-Language" content="cs">
-	<meta http-equiv="cache-control" content="no-cache">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="robots" content="noindex,follow">
 	<meta name="author" content="Martin Hošek">
-	<meta name="generator" content="Visual Studio Code">
-	<meta name="description" content="Prezentační stránky Bytového družstva">
 	<link rel="shortcut icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 -6 18 1'><text>🏠</text></svg>" type="image/svg+xml">
 	<title>NV 1 a 2, BV</title>
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.3/particles.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<style>
 		body {
 			background: #006EFF;
-			background: linear-gradient(0deg,rgba(0, 110, 255, 1) 0%, rgba(249, 115, 22, 1) 50%, rgba(241, 26, 26, 1) 100%);
+			background: linear-gradient(0deg, rgba(0, 110, 255, 1) 0%, rgba(249, 115, 22, 1) 50%, rgba(241, 26, 26, 1) 100%);
+			background-attachment: fixed;
+			margin: 0;
 		}
 		table {
 			position: relative;
@@ -27,55 +24,23 @@
 			border: 0px;
 			z-index: 1;
 		}
-
 		th {
 			width: 650px;
 		}
-
 		#i {
 			width: 180px;
 			height: 180px;
 			border-radius: 5px;
 		}
-
 		im img {
 			width: 630px;
 			height: 891px;
 		}
-
 		a {
 			color: #e9fa93;
 		}
 	</style>
 </head>
-<script>
-	window.onload = () => {
-		const bg = document.getElementById('body');
-		window.addEventListener('mousemove', (e) => {
-            const centerX = window.innerWidth / 2;
-            const centerY = window.innerHeight / 2;
-            const deltaX = e.clientX - centerX;
-            const deltaY = e.clientY - centerY;
-            let angle = Math.atan2(deltaY, deltaX) * (180 / Math.PI) + 90;
-            const gradient = `linear-gradient(${angle}deg, rgba(0, 110, 255, 1) 0%, rgba(249, 115, 22, 1) 50%, rgba(241, 26, 26, 1) 100%)`;
-            bg.style.background = gradient;
-			});
-		for (let s = 1; s < 9; s++) {
-			document.querySelectorAll("#s")[0].insertAdjacentHTML("beforeend", `<a href="#${s}">${s}</a> `);
-			document.querySelectorAll("im")[0].insertAdjacentHTML("beforeend", `<br><img src="strana_${s}.png" id="${s}">`)
-		};
-	if (new Date("29/01/2025") < new Date()) document.getElementById("pozv").innerHTML = "<img src='poz.jpg' width='630px' height='891px'>";
-	};
-	let kyvy = (x) => {
-		rand = Math.floor(Math.random() * 20) - 10;
-		x.style.webkitTransform = "rotateZ(" + rand + "deg)";
-		x.style.msTransform = "rotateZ(" + rand + "deg)";
-		x.style.transform = "rotateZ(" + rand + "deg)";
-		x.style.transition = "0.8s ease";
-	};
-
-</script>
-
 <body oncontextmenu="return false" onmousedown="return false" onselectstart="return false" ondragstart="return false">
 	<table cellspacing="0" cellpadding="2" align="center">
 		<tbody>
@@ -96,7 +61,6 @@
 							Výbor: (od 27. 6. 2016) předseda výboru: Ing. Viera Sucháčová<br>
 							místopředseda: Petra Janošková<br>
 							člen výboru: Renata Hošková<br>
-							<br>
 						</p>
 						<p>Bytové družstvo na Valtické 1 a 2, Břeclav<br>
 							Sídlo: Na Valtické 334/1, 691 41 Břeclav<br>
@@ -112,14 +76,10 @@
 							1. místopředseda: Petra Janošková<br>
 							2. místopředseda: Renata Hošková
 						</p>
-						<p>Datová schránka: ztztz2e<br>
-						<p>Email: bd.nv1a2@gmail.com<br>
-							<br>
-						</p>
-						<p>webové stránky: <s>nv1a2.wz.cz</s> - nv1a2.github.io
-						</p>
-						<p>Mobil: +420 607 378 278
-						</p>
+						<p>Datová schránka: ztztz2e</p>
+						<p>Email: bd.nv1a2@gmail.com</p>
+						<p>webové stránky: <s>nv1a2.wz.cz</s> - nv1a2.github.io</p>
+						<p>Mobil: +420 607 378 278</p>
 					</span>
 				</th>
 				<td><img src="L4.jpg" id="i" onmouseover="kyvy(this)"></td>
@@ -142,18 +102,45 @@
 				<td align="center"><br>
 					<span id="s" style="font-size:110%;  color:#1ab534;"> Stanovy strana : </span>
 					<br>
-					<im>
-					</im>
+					<im></im>
 				</td>
 				<td height="180"></td>
 			</tr>
-			<tr>
-				<td colspan="3" height="180"></td>
-			</tr>
 		</tbody>
 	</table>
+
+<script>
+	let kyvy = (x) => {
+		let rand = Math.floor(Math.random() * 20) - 10;
+		x.style.transform = "rotateZ(" + rand + "deg)";
+		x.style.transition = "0.8s ease";
+	};
+
+	window.onload = () => {
+		// Logika pro rotaci gradientu na pozadí body
+		window.addEventListener('mousemove', (e) => {
+            const centerX = window.innerWidth / 2;
+            const centerY = window.innerHeight / 2;
+            const deltaX = e.clientX - centerX;
+            const deltaY = e.clientY - centerY;
+            let angle = Math.atan2(deltaY, deltaX) * (180 / Math.PI) + 90;
+            document.body.style.background = `linear-gradient(${angle}deg, rgba(0, 110, 255, 1) 0%, rgba(249, 115, 22, 1) 50%, rgba(241, 26, 26, 1) 100%)`;
+            document.body.style.backgroundAttachment = "fixed";
+		});
+
+		// Dynamické generování obsahu
+		const sElem = document.getElementById("s");
+		const imElem = document.getElementsByTagName("im")[0];
+
+		for (let s = 1; s <= 8; s++) {
+			sElem.insertAdjacentHTML("beforeend", `<a href="#${s}">${s}</a> `);
+			imElem.insertAdjacentHTML("beforeend", `<br><img src="strana_${s}.png" id="${s}">`);
+		}
+
+		if (new Date("2025-01-29") < new Date()) {
+			document.getElementById("pozv").innerHTML = "<img src='poz.jpg' width='630px' height='891px'>";
+		}
+	};
+</script>
 </body>
-
 </html>
-
-
