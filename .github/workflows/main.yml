@@ -1,4 +1,4 @@
-name: firs Workflow
+name: Nasazeni webu na GitHub Pages
 
 on:
   push:
@@ -7,11 +7,33 @@ on:
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
 jobs:
-  build:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps: deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
     - name: Stazeni kodu z repozitare
       uses: actions/checkout@v4
-    - name: Spusteni testovaciho skriptu
-      run: echo "Workflow uspesne bezi!"
+
+    - name: Nastaveni GitHub Pages
+      uses: actions/configure-pages@v5
+
+    - name: Zabaleni souboru pro web
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: '.' # Nahraje cely repozitar (vsechny HTML a obrazky)
+
+    - name: Publikovani na zivy web
+      id: deployment
+      uses: actions/deploy-pages@v4
